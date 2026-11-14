@@ -1,0 +1,20 @@
+# Cabeceras de seguridad para Cloudflare Pages
+# Documentación: https://developers.cloudflare.com/pages/configuration/headers/
+#
+# La CSP NO usa 'unsafe-inline': por eso el sitio no tiene <style>, style="" ni
+# <script> en línea. Si agregas un script o estilo, ponlo en un archivo aparte.
+# Si algún día integras un servicio externo (analítica, mapa, etc.), tendrás que
+# agregar su dominio aquí de forma explícita.
+
+/*
+  Content-Security-Policy: default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; manifest-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()
+  Cross-Origin-Opener-Policy: same-origin
+  Strict-Transport-Security: max-age=31536000
+
+# Las imágenes cambian poco: caché de una semana.
+/img/*
+  Cache-Control: public, max-age=604800

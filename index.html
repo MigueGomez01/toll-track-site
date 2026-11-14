@@ -1,0 +1,619 @@
+<!doctype html>
+<!--
+  ============================================================================
+  Toll-Track · Mantenimiento 360 — Landing de ventas (sitio estático)
+  ============================================================================
+  GUÍA RÁPIDA DE EDICIÓN
+  - Lo que aún falte por completar está marcado con [[doble corchete]].
+    Para encontrarlo todo:  grep -rn "\[\[" .
+  - Colores: variables al inicio de css/styles.css
+  - Logo: img/icon-512.png ya es el logo de Toll-Track (512×512 px, PNG).
+  - Capturas: reemplaza los archivos de img/ (dimensiones exactas en los
+    comentarios de la sección 6).
+  - No agregues <style>, style="" ni <script> en línea: la CSP (_headers) los bloquea.
+  ============================================================================
+-->
+<html lang="es-CO">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- SEO. Mantén el title entre 50 y 60 caracteres y la description entre 120 y 160. -->
+  <title>Toll-Track · Mantenimiento 360 | Software para tiendas y locales</title>
+  <meta name="description" content="Gestiona el mantenimiento de tus tiendas y locales: reportes por QR, órdenes de trabajo, técnicos con evidencia fotográfica y trazabilidad por sede.">
+  <meta name="theme-color" content="#0b2a4a">
+  <link rel="canonical" href="https://mantenimiento360.app/">
+
+  <!-- Open Graph (vista previa al compartir en WhatsApp, redes, etc.) -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_CO">
+  <meta property="og:site_name" content="Toll-Track · Mantenimiento 360">
+  <meta property="og:title" content="Toll-Track · Mantenimiento 360">
+  <meta property="og:description" content="Ordena el mantenimiento de tus tiendas y locales: QR, órdenes de trabajo, técnicos y evidencia fotográfica.">
+  <meta property="og:url" content="https://mantenimiento360.app/">
+  <!-- og-image.png: 1200×630 px. Se usa PNG porque WhatsApp y algunas redes no leen bien WebP aquí. -->
+  <meta property="og:image" content="https://mantenimiento360.app/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Toll-Track · Mantenimiento 360">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon e icono de pantalla de inicio: usan tu logo icon-512.png -->
+  <link rel="icon" type="image/png" sizes="512x512" href="img/icon-512.png">
+  <link rel="apple-touch-icon" href="img/icon-512.png">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+<!-- Íconos (se reutilizan con <use href="#id">). Sin descargas externas. -->
+<svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-qr" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h2v2h-2zM19 14h2M14 19h2M19 19h2v2h-2z"/></symbol>
+  <symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 3h6v3H9zM9 12h6M9 16h4"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13.5" r="3.5"/></symbol>
+  <symbol id="i-photo-off" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13.5" r="3.5"/><path d="M3 3l18 18"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></symbol>
+  <symbol id="i-history" viewBox="0 0 24 24"><path d="M3 12a9 9 0 109-9 9 9 0 00-6.4 2.6L3 8"/><path d="M3 3v5h5M12 7v5l3 2"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></symbol>
+  <symbol id="i-building" viewBox="0 0 24 24"><path d="M5 21V4h9v17M14 9h5v12M8 8h3M8 12h3M8 16h3M3 21h18"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></symbol>
+  <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 7h8M18 7h2M4 17h2M12 17h8"/><circle cx="15" cy="7" r="2.5"/><circle cx="9" cy="17" r="2.5"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M16 7l3 3M14 9l2 2"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 005.7 0l3-3a4 4 0 00-5.7-5.7l-1 1M14 10a4 4 0 00-5.7 0l-3 3a4 4 0 005.7 5.7l1-1"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16v-5a6 6 0 0112 0v5l2 2H4zM10 21h4"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M3.5 20.5l1.4-4.2A8.5 8.5 0 118 19.3z"/><path d="M9 9c0 3 3 6 6 6l1.2-1.4-2-1-1 .8c-.8-.3-1.9-1.4-2.2-2.2l.8-1-1-2z"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+</svg>
+
+<!-- ============ 1. CABECERA FIJA ============ -->
+<header class="site-header">
+  <div class="wrap header-in">
+    <a class="brand" href="#inicio" aria-label="Toll-Track Mantenimiento 360, ir al inicio">
+      <!-- LOGO: reemplaza img/icon-512.png -->
+      <img src="img/icon-512.png" width="40" height="40" alt="">
+      <span class="brand-text">Toll-Track<small>Mantenimiento 360</small></span>
+    </a>
+
+    <nav class="nav" id="site-nav" aria-label="Principal">
+      <ul>
+        <li><a href="#problema">El problema</a></li>
+        <li><a href="#como-funciona">Cómo funciona</a></li>
+        <li><a href="#roles">Funciones</a></li>
+        <li><a href="#capturas">La app</a></li>
+        <li><a href="#seguridad">Seguridad</a></li>
+        <li><a href="#planes">Planes</a></li>
+        <li><a href="#preguntas">Preguntas</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn btn-primary btn-small" href="#contacto">Solicitar demo</a>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">
+        <svg class="ic i-open" aria-hidden="true"><use href="#i-menu"/></svg>
+        <svg class="ic i-close" aria-hidden="true"><use href="#i-close"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="contenido">
+
+  <!-- ============ 2. HERO ============ -->
+  <section class="hero" id="inicio">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Plataforma de mantenimiento locativo</p>
+        <!-- TITULAR: edítalo aquí -->
+        <h1>Ordena el mantenimiento de tus <span class="mark">tiendas y locales</span> en un solo lugar</h1>
+        <p class="lead">Reportes por QR, órdenes de trabajo, técnicos con evidencia fotográfica y seguimiento de cada sede, desde el celular o el computador.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#contacto">Solicitar demo</a>
+          <a class="btn btn-ghost" href="#como-funciona">Ver cómo funciona</a>
+        </div>
+        <p class="hero-note">Hecha para empresas con varias tiendas, locales o sedes.</p>
+      </div>
+
+      <!-- Imagen principal. CAPTURA 1 (misma de la sección 6).
+           Tamaño del archivo: 723×1439 px WebP. -->
+      <div class="device">
+        <img src="img/captura-resumen.webp" width="723" height="1439" fetchpriority="high"
+             alt="Pantalla de resumen de la aplicación en un celular, con el estado de las órdenes de mantenimiento">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. EL PROBLEMA ============ -->
+  <!--
+    TARJETAS CON IMAGEN: cada <li> usa class="card card-media".
+    Imágenes (WebP, 640×360 px, relación 16:9). Guárdalas en /img con estos nombres:
+      img/problema-whatsapp.svg       → Órdenes por WhatsApp
+      img/problema-evidencia.svg      → Trabajos sin evidencia
+      img/problema-trazabilidad.webp   → Sin trazabilidad
+    El CSS de estas tarjetas (.card-media) ya está dentro de css/styles.css, sección 3.
+  -->
+  <section id="problema" class="alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">El problema</p>
+        <h2>Mantener muchas sedes sin un sistema se vuelve desorden</h2>
+        <p>Si el mantenimiento de tus locales se maneja con chats y llamadas, seguro te suena esto.</p>
+      </div>
+      <ul class="cards-3">
+        <li class="card card-media">
+          <div class="card-img">
+            <img src="img/problema-whatsapp.svg" width="640" height="360" loading="lazy"
+                 alt="Chat de grupo saturado de mensajes sin responder, con el contador de mensajes sin leer">
+          </div>
+          <div class="card-body">
+            <h3>Órdenes por WhatsApp</h3>
+            <p>La falla llega en un chat, se pierde entre mensajes y nadie sabe con certeza si ya se atendió.</p>
+          </div>
+        </li>
+        <li class="card card-media">
+          <div class="card-img">
+            <img src="img/problema-evidencia.svg" width="640" height="360" loading="lazy"
+                 alt="Dos recuadros vacíos de foto, antes y después, con aviso de que no hay fotos de evidencia">
+          </div>
+          <div class="card-body">
+            <h3>Trabajos sin evidencia</h3>
+            <p>El técnico dice que terminó, pero no hay fotos de cómo estaba el daño ni de cómo quedó.</p>
+          </div>
+        </li>
+        <li class="card card-media">
+          <div class="card-img">
+            <img src="img/problema-trazabilidad.webp" width="640" height="360" loading="lazy"
+                 alt="Ilustración de una secuencia de pasos que termina en una aprobación">
+          </div>
+          <div class="card-body">
+            <h3>Sin trazabilidad</h3>
+            <p>No existe un historial por tienda: no se sabe qué se arregló, quién lo hizo ni cuándo.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 4. CÓMO FUNCIONA (4 pasos) ============ -->
+  <section id="como-funciona">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Cómo funciona</p>
+        <h2>De la falla reportada al trabajo aprobado, en 4 pasos</h2>
+      </div>
+      <ol class="steps">
+        <li class="step">
+          <h3>Reporte por QR</h3>
+          <p>Imprime el QR de tu empresa y pégalo donde lo vea el equipo. Quien lo escanea elige su tienda y reporta la falla en segundos.</p>
+        </li>
+        <li class="step">
+          <h3>Orden de trabajo</h3>
+          <p>El reporte se convierte en una orden de la tienda correspondiente, asignada a un técnico.</p>
+        </li>
+        <li class="step">
+          <h3>El técnico ejecuta con fotos</h3>
+          <p>Recibe la orden en su celular, hace el trabajo y sube fotos como evidencia.</p>
+        </li>
+        <li class="step">
+          <h3>El administrador aprueba</h3>
+          <p>Revisa el trabajo y las fotos, aprueba la orden y queda el historial de la tienda.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ 5. FUNCIONES POR ROL ============ -->
+  <!-- IMPORTANTE: verifica que cada función listada exista en la app antes de publicar. -->
+  <section id="roles" class="alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Funciones por rol</p>
+        <h2>Cada persona ve y hace lo que le corresponde</h2>
+      </div>
+      <div class="cards-3">
+        <article class="card role">
+          <div class="card-head">
+            <div class="icon-bubble blue"><svg class="ic" aria-hidden="true"><use href="#i-clipboard"/></svg></div>
+            <h3>Administrador</h3>
+          </div>
+          <ul>
+            <li>Crea y asigna órdenes de trabajo</li>
+            <li>Gestiona las tiendas y los técnicos de su empresa</li>
+            <li>Revisa las evidencias y aprueba los trabajos</li>
+            <li>Consulta reportes por tienda y recibe notificaciones</li>
+          </ul>
+        </article>
+        <article class="card role">
+          <div class="card-head">
+            <div class="icon-bubble blue"><svg class="ic" aria-hidden="true"><use href="#i-user"/></svg></div>
+            <h3>Técnico</h3>
+          </div>
+          <ul>
+            <li>Ve las órdenes que tiene asignadas</li>
+            <li>Registra el avance desde su celular</li>
+            <li>Sube fotos como evidencia del trabajo</li>
+            <li>Recibe avisos de nuevas órdenes</li>
+          </ul>
+        </article>
+        <!-- SOPORTE 24/7: confirma que realmente atiendes a cualquier hora antes de publicar -->
+        <article class="card role support" id="soporte">
+          <div class="card-head">
+            <div class="icon-bubble blue"><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg></div>
+            <h3>Soporte por WhatsApp 24/7</h3>
+          </div>
+          <ul>
+            <li>Escríbenos a cualquier hora, todos los días</li>
+            <li>Te ayudamos con dudas sobre el uso de la plataforma</li>
+            <li>Reporta una falla y la revisamos contigo</li>
+          </ul>
+          <a class="btn btn-primary btn-small" href="https://wa.me/573233670402?text=Hola%2C%20necesito%20soporte%20con%20Toll-Track%20%C2%B7%20Mantenimiento%20360."
+             target="_blank" rel="noopener noreferrer">
+            <svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg>Pedir soporte
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 6. CAPTURAS DE LA APP ============ -->
+  <!--
+    CAPTURAS: archivos en /img, formato WebP. En las capturas NO deben verse nombres de
+    personas ni datos de clientes sin su autorización. El HTML declara width/height
+    reales de cada archivo para evitar saltos de diseño.
+
+    img/captura-resumen.webp     723×1439 px  (celular, Resumen)  — también se usa en el hero
+    img/captura-ordenes.webp     723×1439 px  (celular, lista de órdenes)
+    img/captura-menu.webp        723×1439 px  (celular, menú con el espacio "Tu Logo")
+    img/captura-escritorio.webp  1474×653 px  (computador, vista del administrador)
+
+    Para convertir PNG a WebP:  cwebp -q 82 captura.png -o captura.webp
+  -->
+  <section id="capturas">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">La aplicación</p>
+        <h2>Así se ve Toll-Track en el día a día</h2>
+        <p>Así se ve la aplicación en uso, en el computador y en el celular.</p>
+      </div>
+      <div class="shots">
+        <figure>
+          <div class="device device-desktop">
+            <img src="img/captura-escritorio.webp" width="1474" height="653" loading="lazy"
+                 alt="Vista de la aplicación en computador para el administrador, con el resumen de órdenes y avances">
+          </div>
+          <figcaption>Vista del administrador en el computador</figcaption>
+        </figure>
+        <div class="shots-phones">
+          <figure>
+            <div class="device">
+              <img src="img/captura-resumen.webp" width="723" height="1439" loading="lazy"
+                   alt="Pantalla de resumen en el celular con el estado de las órdenes">
+            </div>
+            <figcaption>Resumen de la operación</figcaption>
+          </figure>
+          <figure>
+            <div class="device">
+              <img src="img/captura-ordenes.webp" width="723" height="1439" loading="lazy"
+                   alt="Lista de órdenes de trabajo en el celular">
+            </div>
+            <figcaption>Órdenes de trabajo</figcaption>
+          </figure>
+          <figure>
+            <div class="device">
+              <img src="img/captura-menu.webp" width="723" height="1439" loading="lazy"
+                   alt="Menú de navegación de la aplicación en el celular, con el espacio para el logo de la empresa cliente">
+            </div>
+            <figcaption>Tu logo en el menú de la app</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REPORTES POR QR ============ -->
+  <!-- Captura: img/captura-qr.webp (1306×695 px). El QR de la imagen es de EJEMPLO (apunta a ejemplo.com). -->
+  <section id="qr" class="alt">
+    <div class="wrap split wide-shot">
+      <div class="copy">
+        <p class="eyebrow">Reportes por QR</p>
+        <h2>Reportar una falla toma segundos</h2>
+        <p>Tu empresa tiene un código QR para todas sus tiendas. Lo imprimes y lo pegas donde lo vea el equipo. Quien lo escanea elige su tienda y envía el reporte del incidente o la solicitud de mantenimiento.</p>
+        <ul class="checks">
+          <li>Un solo QR para todas las tiendas de tu empresa</li>
+          <li>Quien escanea elige su tienda y describe lo que pasa</li>
+          <li>Descargas el cartel listo para imprimir y pegar</li>
+          <li>Puedes regenerar el QR cuando lo necesites</li>
+        </ul>
+      </div>
+      <figure>
+        <div class="device device-desktop">
+          <img src="img/captura-qr.webp" width="1306" height="695" loading="lazy"
+               alt="Pantalla de reportes por QR en el computador, con un código QR de ejemplo y los botones para copiar el enlace, descargar el cartel y regenerar el QR">
+        </div>
+        <figcaption>Pantalla de reportes por QR (código de ejemplo)</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ INFORMES ============ -->
+  <!-- Captura: img/captura-informes.webp (1600×748 px) -->
+  <section id="informes">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Informes</p>
+        <h2>Los números de tu mantenimiento, siempre a la vista</h2>
+        <p>Mira cuántas órdenes se crean y se completan, en qué tiendas se concentran y cómo vas frente al período anterior.</p>
+      </div>
+      <figure class="shot-wide">
+        <div class="device device-desktop">
+          <img src="img/captura-informes.webp" width="1600" height="748" loading="lazy"
+               alt="Pantalla de informes en el computador, con la gráfica de órdenes creadas por día, el estado de las órdenes, la comparación entre período actual y anterior y las órdenes por prioridad">
+        </div>
+        <figcaption>Pantalla de informes de la aplicación</figcaption>
+      </figure>
+      <ul class="points">
+        <li><strong>Órdenes por tienda y por día</strong><span>Con vista de creadas y de completadas.</span></li>
+        <li><strong>Estado de las órdenes</strong><span>Cuántas están asignadas y cuántas en progreso.</span></li>
+        <li><strong>Período actual y anterior</strong><span>Compara tu operación con los mismos días del período anterior.</span></li>
+        <li><strong>Órdenes por prioridad</strong><span>Cuántas son de prioridad alta, media o baja.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 7. MULTIEMPRESA ============ -->
+  <section id="multiempresa" class="alt">
+    <div class="wrap split">
+      <div class="copy">
+        <p class="eyebrow">Multiempresa</p>
+        <h2>Cada empresa ve solo su información</h2>
+        <p>Toll-Track es una plataforma compartida, pero los datos de cada empresa están separados. Tus tiendas, técnicos, órdenes y fotos solo son visibles para los usuarios de tu empresa.</p>
+        <p>Esto permite que la plataforma atienda a varias empresas a la vez sin mezclar su información.</p>
+      </div>
+      <div class="tenants" aria-label="Ejemplo de datos separados por empresa">
+        <div class="tenant">
+          <h3><svg class="ic" aria-hidden="true"><use href="#i-building"/></svg>Empresa A</h3>
+          <ul class="chips"><li>Tiendas</li><li>Técnicos</li><li>Órdenes</li><li>Fotos</li></ul>
+        </div>
+        <div class="tenant">
+          <h3><svg class="ic" aria-hidden="true"><use href="#i-building"/></svg>Empresa B</h3>
+          <ul class="chips"><li>Tiendas</li><li>Técnicos</li><li>Órdenes</li><li>Fotos</li></ul>
+        </div>
+        <div class="tenant">
+          <h3><svg class="ic" aria-hidden="true"><use href="#i-building"/></svg>Empresa C</h3>
+          <ul class="chips"><li>Tiendas</li><li>Técnicos</li><li>Órdenes</li><li>Fotos</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 8. INSTALABLE COMO APP ============ -->
+  <section id="instalable">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Instalable</p>
+        <h2>Instálala en el celular sin pasar por una tienda de aplicaciones</h2>
+        <p>Toll-Track funciona desde el navegador y se puede agregar a la pantalla de inicio como una app más. No hay que descargar nada de Google Play ni de App Store.</p>
+      </div>
+      <div class="install-list">
+        <div class="card install-item">
+          <h3><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>En Android (Chrome)</h3>
+          <ol>
+            <li>Abre el enlace de tu empresa en Chrome.</li>
+            <li>Toca <strong>Instalar app</strong> en el menú de la aplicación o en el menú del navegador.</li>
+            <li>Confirma y busca el ícono en tu pantalla de inicio.</li>
+          </ol>
+        </div>
+        <div class="card install-item">
+          <h3><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>En iPhone (Safari)</h3>
+          <ol>
+            <li>Abre el enlace de tu empresa en Safari.</li>
+            <li>Toca el botón <strong>Compartir</strong>.</li>
+            <li>Elige <strong>Añadir a pantalla de inicio</strong>.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 9. SEGURIDAD ============ -->
+  <!-- SOLO afirmaciones reales y verificables. No agregues certificaciones ni garantías
+       (ISO, "cifrado militar", "99.9% de disponibilidad", etc.) a menos que existan y puedas demostrarlas. -->
+  <section id="seguridad" class="security">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Seguridad</p>
+        <h2>Lo que hacemos para cuidar la información de tu empresa</h2>
+        <p>Estas son las medidas con las que cuenta la plataforma hoy.</p>
+      </div>
+      <ul class="sec-list">
+        <li class="sec-item">
+          <svg class="ic" aria-hidden="true"><use href="#i-building"/></svg>
+          <div><h3>Datos separados por empresa</h3><p>Cada empresa accede únicamente a su propia información.</p></div>
+        </li>
+        <li class="sec-item">
+          <svg class="ic" aria-hidden="true"><use href="#i-key"/></svg>
+          <div><h3>Accesos por rol</h3><p>El administrador y el técnico tienen permisos distintos dentro de la plataforma.</p></div>
+        </li>
+        <li class="sec-item">
+          <svg class="ic" aria-hidden="true"><use href="#i-history"/></svg>
+          <div><h3>Historial de auditoría</h3><p>Se registran las acciones realizadas en la plataforma.</p></div>
+        </li>
+        <li class="sec-item">
+          <svg class="ic" aria-hidden="true"><use href="#i-link"/></svg>
+          <div><h3>Fotos privadas</h3><p>Las fotos de evidencia no son públicas: se consultan con enlaces temporales.</p></div>
+        </li>
+        <li class="sec-item">
+          <svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg>
+          <div><h3>Conexión cifrada</h3><p>La comunicación con la plataforma viaja por HTTPS.</p></div>
+        </li>
+      </ul>
+      <p class="sec-foot">¿Tu empresa necesita más detalle sobre cómo se manejan los datos? Escríbenos y lo conversamos.</p>
+    </div>
+  </section>
+
+  <!-- ============ 10. QUIÉNES SOMOS ============ -->
+  <section id="nosotros">
+    <div class="wrap split">
+      <div class="copy">
+        <p class="eyebrow">Quiénes somos</p>
+        <h2>Mantenimiento 360</h2>
+        <!-- DESCRIPCIÓN: 3 o 4 líneas sobre quiénes son, qué problema resuelven y por qué lo hacen -->
+        <p>En Mantenimiento 360 desarrollamos Toll-Track, una plataforma web para ordenar el mantenimiento de tiendas y locales: reportes por QR, órdenes de trabajo, técnicos con evidencia fotográfica y trazabilidad por sede. Estamos en Bogotá y ya acompañamos a una empresa cliente en su operación diaria.</p>
+        <dl class="about-facts">
+          <div class="fact"><dt>Ciudad</dt><dd>Bogotá, Colombia</dd></div>
+          <div class="fact"><dt>Soporte</dt><dd>WhatsApp 24/7</dd></div>
+        </dl>
+      </div>
+      <!-- FOTO DEL EQUIPO (opcional). Para activarla, quita los comentarios y sube
+           img/equipo.webp (1200×800 px):
+      <img src="img/equipo.webp" width="1200" height="800" loading="lazy" alt="[[Descripción de la foto del equipo]]">
+      -->
+    </div>
+  </section>
+
+  <!-- ============ 11. NUESTROS CLIENTES ============ -->
+  <!--
+    LOGOS: cada cliente es un <li>. Para agregar más, copia el <li> completo.
+    Logos en WebP, fondo transparente o blanco, máximo 240×96 px (declaradas abajo).
+    Antes de publicar un logo, ten autorización escrita del cliente.
+    NO inventes testimonios. Si algún cliente te da una cita real y autorizada,
+    puedes añadirla debajo de la lista con un <blockquote>; si no, déjalo así.
+  -->
+  <section id="clientes" class="alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Nuestros clientes</p>
+        <h2>Quienes ya trabajan con Toll-Track</h2>
+      </div>
+      <ul class="logos">
+        <li><img src="img/cliente-colombina.webp" width="240" height="96" loading="lazy" alt="Colombina"></li>
+        <!-- Plantilla para otro cliente:
+        <li><img src="img/cliente-2.webp" width="240" height="96" loading="lazy" alt="Nombre del cliente"></li>
+        -->
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 12. PLANES Y PRECIOS ============ -->
+  <!-- Cuando tengas precios, reemplaza "Cotiza con nosotros" por el valor (ej. "Desde $XXX.XXX al mes"). -->
+  <section id="planes">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Planes y precios</p>
+        <h2>Un plan según el tamaño de tu operación</h2>
+        <p>Cada empresa es distinta. Cuéntanos cuántas tiendas y técnicos tienes y te armamos una propuesta.</p>
+      </div>
+      <div class="cards-3">
+        <article class="card plan">
+          <h3>Operaciones pequeñas</h3>
+          <p class="for">Para empresas con pocas tiendas o locales que quieren dejar el WhatsApp y el papel.</p>
+          <p class="price">Cotiza con nosotros</p>
+          <a class="btn btn-ghost" href="#contacto">Solicitar demo</a>
+        </article>
+        <article class="card plan featured">
+          <h3>Operaciones en crecimiento</h3>
+          <p class="for">Para empresas con varias sedes y un equipo de técnicos que necesita orden y trazabilidad.</p>
+          <p class="price">Cotiza con nosotros</p>
+          <a class="btn btn-primary" href="#contacto">Solicitar demo</a>
+        </article>
+        <article class="card plan">
+          <h3>Grandes operaciones</h3>
+          <p class="for">Para empresas con muchas tiendas que necesitan acompañamiento en la puesta en marcha.</p>
+          <p class="price">Cotiza con nosotros</p>
+          <a class="btn btn-ghost" href="#contacto">Solicitar demo</a>
+        </article>
+      </div>
+      <p class="plans-note">El valor depende del número de tiendas y usuarios.</p>
+    </div>
+  </section>
+
+  <!-- ============ 13. PREGUNTAS FRECUENTES ============ -->
+  <section id="preguntas" class="alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Preguntas frecuentes</p>
+        <h2>Lo que más nos preguntan</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>¿Qué es Toll-Track · Mantenimiento 360?</summary>
+          <p class="answer">Es una plataforma web para gestionar el mantenimiento de tiendas y locales: reportes por QR, órdenes de trabajo, técnicos, evidencia fotográfica, notificaciones y reportes por sede.</p>
+        </details>
+        <details>
+          <summary>¿Necesito instalar algo?</summary>
+          <p class="answer">No. Funciona desde el navegador del celular o del computador. Si quieres, puedes agregarla a la pantalla de inicio del celular como una app, sin pasar por una tienda de aplicaciones.</p>
+        </details>
+        <details>
+          <summary>¿Mis técnicos necesitan computador?</summary>
+          <p class="answer">No. Los técnicos reciben y atienden las órdenes desde su celular, y suben las fotos de evidencia desde ahí mismo.</p>
+        </details>
+        <details>
+          <summary>¿Otra empresa puede ver mi información?</summary>
+          <p class="answer">No. Los datos de cada empresa están separados y cada usuario accede solo a la información de su empresa y según su rol.</p>
+        </details>
+        <details>
+          <summary>¿Las fotos de evidencia son públicas?</summary>
+          <p class="answer">No. Las fotos son privadas y se consultan mediante enlaces temporales.</p>
+        </details>
+        <details>
+          <summary>¿Cuánto cuesta?</summary>
+          <p class="answer">El valor depende del tamaño de tu operación, principalmente del número de tiendas y usuarios. Escríbenos y te enviamos una propuesta.</p>
+        </details>
+        <details>
+          <summary>¿Puedo ver una demo antes de decidir?</summary>
+          <p class="answer">Sí. Te mostramos la plataforma con una empresa de demostración con datos ficticios y resolvemos tus dudas.</p>
+        </details>
+        <details>
+          <summary>¿Para qué tipo de negocios sirve?</summary>
+          <p class="answer">Para empresas que mantienen varias tiendas, locales o sedes y necesitan ordenar los reportes, a los técnicos y el historial de cada punto.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 14. CONTACTO ============ -->
+  <!--
+    CONTACTO. Sin formularios: no se guardan datos personales en este sitio.
+    - WhatsApp: número con indicativo de país, sin + ni espacios (573233670402). El mensaje
+      prellenado va después de "text=" y debe estar codificado para URL.
+    - Correo: se edita en el enlace y en el texto.
+  -->
+  <section id="contacto">
+    <div class="wrap">
+      <div class="contact">
+        <h2>Solicita tu demo</h2>
+        <p>Escríbenos por WhatsApp o por correo. Te mostramos la plataforma con datos de ejemplo y conversamos sobre tu operación.</p>
+        <div class="cta-row">
+          <a class="btn btn-light" href="https://wa.me/573233670402?text=Hola%2C%20quiero%20solicitar%20una%20demo%20de%20Toll-Track%20%C2%B7%20Mantenimiento%20360%20para%20mi%20empresa."
+             target="_blank" rel="noopener noreferrer">
+            <svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg>Escribir por WhatsApp
+          </a>
+        </div>
+        <p class="mail">También por correo: <a href="mailto:gomezmigue875@gmail.com">maantenimiento.360@gmail.com</a> · WhatsApp: 323 367 0402</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ 15. PIE DE PÁGINA ============ -->
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <p>© 2026 Mantenimiento 360. Todos los derechos reservados. Toll-Track · Mantenimiento 360.</p>
+    <nav class="footer-links" aria-label="Legal">
+      <a href="privacidad.html">Aviso de privacidad</a>
+      <a href="terminos.html">Términos y condiciones</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
