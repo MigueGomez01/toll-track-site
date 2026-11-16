@@ -657,3 +657,32 @@ section { padding-block: 3.25rem; scroll-margin-top: var(--header-h); }
   .points { grid-template-columns: repeat(4, 1fr); }
   .split.wide-shot { grid-template-columns: 5fr 7fr; }
 }
+
+/* Servicio destacado en el menú: copia el diseño del botón principal (.btn-primary). */
+.nav a.nav-service {position: relative; overflow: hidden;
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  min-height: 46px; padding: .7rem 1.4rem; border-radius: 12px;
+  font: 600 1rem/1.2 var(--font); text-decoration: none; cursor: pointer;
+  border: 1.5px solid transparent;
+  
+  translate: var(--tx, 0px) var(--ty, 0px);
+  transition: transform .25s var(--ease), box-shadow .25s ease, background-color .25s ease, filter .25s ease, border-color .25s ease, translate .35s var(--ease);}
+.nav a.nav-service:hover {transform: translateY(-2px);}
+.nav a.nav-service:active {transform: translateY(0) scale(.97);}
+.nav a.nav-service {background: var(--grad); color: var(--white); box-shadow: 0 10px 24px -10px rgba(18, 115, 184, .8);}
+.nav a.nav-service:hover {filter: brightness(1.08); box-shadow: 0 16px 32px -10px rgba(18, 115, 184, .95);}
+.nav a.nav-service {min-height: 40px; padding: .5rem 1rem; font-size: .95rem; border-radius: 10px;}
+
+/* css/servicios.css — solo estilos de la franja "Paquete completo" */
+.svc{padding:56px 0}
+.svc-slim{padding:40px 0}
+.svc-bundle{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;padding:34px 38px;border-radius:24px;background:linear-gradient(135deg,#0b2a4a,#0e4a6b);color:#fff;border:1px solid rgba(255,255,255,.14)}
+.svc-bundle>div:first-child{flex:1 1 380px}
+.svc-bundle-title{font-size:clamp(1.4rem,2.6vw,1.9rem);line-height:1.15;margin:0 0 8px;color:#fff}
+.svc-bundle-text{margin:0;max-width:56ch;color:rgba(255,255,255,.82)}
+.svc-actions{display:flex;gap:12px;flex-wrap:wrap}
+.svc-btn{display:inline-block;padding:13px 22px;border-radius:14px;font-weight:700;text-decoration:none;transition:transform .2s}
+.svc-btn:hover{transform:translateY(-2px)}
+.svc-btn-tt{background:linear-gradient(135deg,#1f8fd6,#2dd4a7);color:#04202a}
+.svc-btn-ghost{border:1px solid rgba(255,255,255,.35);color:#fff}
+.svc-btn:focus-visible{outline:3px solid #ffb454;outline-offset:3px}

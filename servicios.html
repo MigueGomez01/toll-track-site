@@ -1,0 +1,256 @@
+<!doctype html>
+<!--
+  ============================================================================
+  Mantenimiento 360 — Servicio: landing pages para empresas
+  ============================================================================
+  - Reutiliza css/styles.css y js/main.js de la landing principal.
+  - Los estilos nuevos del hero con imagen van en css/servicios.css
+    (copia el contenido de servicios-hero-extra.css al final de ese archivo).
+  - No agregues <style>, style="" ni <script> en línea: la CSP (_headers) los bloquea.
+  - Lo que falte por confirmar está marcado con [[doble corchete]].
+  ============================================================================
+-->
+<html lang="es-CO">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Landing pages para empresas | Mantenimiento 360</title>
+  <meta name="description" content="Creamos la landing page de tu empresa: diseño a tu medida, adaptada al celular, con contacto directo por WhatsApp y lista para que tus clientes te encuentren.">
+  <meta name="theme-color" content="#0b2a4a">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_CO">
+  <meta property="og:site_name" content="Mantenimiento 360">
+  <meta property="og:title" content="Landing pages para empresas | Mantenimiento 360">
+  <meta property="og:description" content="Diseñamos y publicamos la landing page de tu empresa, adaptada al celular y con contacto directo por WhatsApp.">
+  <meta property="og:image" content="https://mantenimiento360.app/img/landing.png">
+  <meta property="og:image:width" content="1000">
+  <meta property="og:image:height" content="890">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/png" sizes="512x512" href="img/icon-512.png">
+  <link rel="apple-touch-icon" href="img/icon-512.png">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/servicios.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+<!-- Íconos usados en esta página (mismos de la landing principal) -->
+<svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 3h6v3H9zM9 12h6M9 16h4"/></symbol>
+  <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 7h8M18 7h2M4 17h2M12 17h8"/><circle cx="15" cy="7" r="2.5"/><circle cx="9" cy="17" r="2.5"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M3.5 20.5l1.4-4.2A8.5 8.5 0 118 19.3z"/><path d="M9 9c0 3 3 6 6 6l1.2-1.4-2-1-1 .8c-.8-.3-1.9-1.4-2.2-2.2l.8-1-1-2z"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+</svg>
+
+<!-- ============ CABECERA FIJA ============ -->
+<header class="site-header">
+  <div class="wrap header-in">
+    <a class="brand" href="index.html" aria-label="Mantenimiento 360, ir al inicio">
+      <img src="img/icon-512.png" width="40" height="40" alt="">
+      <span class="brand-text">Mantenimiento 360<small>Landing pages para empresas</small></span>
+    </a>
+
+    <nav class="nav" id="site-nav" aria-label="Principal">
+      <ul>
+        <li><a class="btn btn-primary btn-small nav-service" href="index.html">Toll-Track</a></li>
+        <li><a href="#incluye">Qué incluye</a></li>
+        <li><a href="#proceso">Cómo trabajamos</a></li>
+        <li><a href="#preguntas">Preguntas</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn btn-primary btn-small" href="#contacto">Cotizar mi landing page</a>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">
+        <svg class="ic i-open" aria-hidden="true"><use href="#i-menu"/></svg>
+        <svg class="ic i-close" aria-hidden="true"><use href="#i-close"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="contenido">
+
+  <!-- ============ 1. HERO ============ -->
+  <section class="hero" id="inicio">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow">Landing pages para empresas</p>
+          <h1>Tu empresa merece una landing page que <span class="mark">te represente</span></h1>
+          <p class="lead">Una landing page es una página web pensada para que quien la visita te escriba o te compre. Diseñamos y publicamos la de tu negocio: clara, adaptada al celular y con contacto por WhatsApp.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#contacto">Cotizar mi landing page</a>
+            <a class="btn btn-ghost" href="#incluye">Ver qué incluye</a>
+          </div>
+          <p class="hero-note">La landing page de Toll-Track que ves en este sitio fue diseñada por nosotros.</p>
+        </div>
+        <figure class="hero-media">
+          <img src="img/landing.svg" width="1000" height="890" alt="Diseño de landing pages para tu empresa: estratégico, adaptado al celular, rápido, moderno y con contacto por WhatsApp. Cotiza al 323 367 0402.">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 2. QUÉ INCLUYE ============ -->
+  <!-- [[Confirma si el servicio incluye dominio y hosting; si es así, agrega una tarjeta o una línea aquí.]] -->
+  <section id="incluye" class="alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Qué incluye</p>
+        <h2>Una landing page pensada para que te encuentren y te escriban</h2>
+      </div>
+      <div class="cards-3">
+        <article class="card role">
+          <div class="card-head">
+            <div class="icon-bubble blue"><svg class="ic" aria-hidden="true"><use href="#i-sliders"/></svg></div>
+            <h3>Diseño a tu medida</h3>
+          </div>
+          <ul>
+            <li>Con tu logo, tus colores y tu estilo</li>
+            <li>Se adapta al celular y al computador</li>
+            <li>Estructura clara y fácil de leer</li>
+          </ul>
+        </article>
+        <article class="card role">
+          <div class="card-head">
+            <div class="icon-bubble blue"><svg class="ic" aria-hidden="true"><use href="#i-clipboard"/></svg></div>
+            <h3>Contenido claro</h3>
+          </div>
+          <ul>
+            <li>Secciones de servicios, preguntas frecuentes y contacto</li>
+            <li>Textos directos, para que el cliente entienda qué ofreces</li>
+            <li>La información de tu empresa siempre a la vista</li>
+          </ul>
+        </article>
+        <article class="card role">
+          <div class="card-head">
+            <div class="icon-bubble blue"><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg></div>
+            <h3>Contacto directo</h3>
+          </div>
+          <ul>
+            <li>Botón de WhatsApp con mensaje prellenado</li>
+            <li>Correo y datos de tu empresa visibles</li>
+            <li>Tus clientes te escriben con un toque</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. CÓMO TRABAJAMOS ============ -->
+  <!-- [[Verifica que estos 4 pasos describan tu proceso real antes de publicar.]] -->
+  <section id="proceso">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Cómo trabajamos</p>
+        <h2>De la idea a tu landing page publicada, en 4 pasos</h2>
+      </div>
+      <ol class="steps">
+        <li class="step">
+          <h3>Conversamos</h3>
+          <p>Nos cuentas de tu negocio, a quién le vendes y qué quieres lograr con tu landing page.</p>
+        </li>
+        <li class="step">
+          <h3>Diseñamos</h3>
+          <p>Armamos la landing page con tu logo, tus colores y los textos de tu empresa.</p>
+        </li>
+        <li class="step">
+          <h3>Ajustamos</h3>
+          <p>Revisas el resultado y nos indicas qué cambiar hasta que quedes conforme.</p>
+        </li>
+        <li class="step">
+          <h3>Publicamos</h3>
+          <p>La dejamos en línea para que tus clientes la encuentren y te escriban.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ 4. PREGUNTAS FRECUENTES ============ -->
+  <section id="preguntas" class="alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Preguntas frecuentes</p>
+        <h2>Lo que más nos preguntan</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>¿Qué es una landing page?</summary>
+          <p class="answer">Es una página web enfocada en un objetivo: que quien la visita te escriba, te llame o te compre. Es más simple y directa que un sitio web con muchas secciones.</p>
+        </details>
+        <details>
+          <summary>¿Cuánto cuesta?</summary>
+          <p class="answer">Depende de las secciones y del contenido que necesite tu landing page. Cuéntanos qué buscas y te enviamos una propuesta.</p>
+        </details>
+        <details>
+          <summary>¿Se ve bien en el celular?</summary>
+          <p class="answer">Sí. Diseñamos cada landing page para que se vea bien tanto en el celular como en el computador.</p>
+        </details>
+        <details>
+          <summary>¿Necesito tener ya el logo y los textos?</summary>
+          <p class="answer">Si ya los tienes, los usamos. Si no, lo conversamos al inicio del proyecto.</p>
+        </details>
+        <details>
+          <summary>¿Puedo ver un ejemplo?</summary>
+          <p class="answer">Sí. La landing page de Toll-Track de este mismo sitio es un ejemplo de nuestro trabajo.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PAQUETE COMPLETO ============ -->
+  <section class="svc svc-slim" aria-label="Paquete completo">
+    <div class="wrap">
+      <div class="svc-bundle">
+        <div>
+          <h2 class="svc-bundle-title">¿También necesitas ordenar el mantenimiento de tus sedes?</h2>
+          <p class="svc-bundle-text">Conoce Toll-Track y pide el paquete completo: software para tu operación y una landing page para tu marca, con un solo proveedor.</p>
+        </div>
+        <div class="svc-actions">
+          <a class="svc-btn svc-btn-tt" href="index.html">Conocer Toll-Track</a>
+          <a class="svc-btn svc-btn-ghost" href="https://wa.me/573233670402?text=Hola%2C%20me%20interesa%20el%20paquete%20completo%3A%20Toll-Track%20y%20una%20landing%20page%20para%20mi%20empresa." target="_blank" rel="noopener noreferrer">Pedir paquete</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============ 5. CONTACTO ============ -->
+  <section id="contacto">
+    <div class="wrap">
+      <div class="contact">
+        <h2>Cotiza tu landing page</h2>
+        <p>Escríbenos por WhatsApp o por correo, cuéntanos de tu negocio y te enviamos una propuesta.</p>
+        <div class="cta-row">
+          <a class="btn btn-light" href="https://wa.me/573233670402?text=Hola%2C%20quiero%20cotizar%20una%20landing%20page%20para%20mi%20empresa."
+             target="_blank" rel="noopener noreferrer">
+            <svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg>Escribir por WhatsApp
+          </a>
+        </div>
+        <p class="mail">También por correo: <a href="mailto:ventas@mantenimiento360.app">ventas@mantenimiento360.app</a> · WhatsApp: 323 367 0402</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ PIE DE PÁGINA ============ -->
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <p>© 2026 Mantenimiento 360. Todos los derechos reservados.</p>
+    <nav class="footer-links" aria-label="Legal">
+      <a href="index.html">Toll-Track</a>
+      <a href="privacidad.html">Aviso de privacidad</a>
+      <a href="terminos.html">Términos y condiciones</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
